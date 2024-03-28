@@ -1,8 +1,6 @@
-import axios from 'axios';
 import {fetchBreeds,fetchBreedById} from './cat-api'
 
 const selectEl= document.querySelector('.breed-select');
-const el = document.querySelector('select.breed-select')
 const loaderEl= document.querySelector('.loader');
 const errorEl = document.querySelector('.error');
 const catInfoContainerEl= document.querySelector('.cat-info'); 
