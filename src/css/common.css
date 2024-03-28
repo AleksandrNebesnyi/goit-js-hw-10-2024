@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: sans-serif;
+    line-height: 1.5;
+  }
+  .container {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.cat_img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.breed-select{
+    padding: 8px;
+    margin-bottom: 24px;
+    
+}
+
+.is-hidden {
+    display: none;
+  }
