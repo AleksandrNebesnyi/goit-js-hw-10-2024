@@ -16,17 +16,11 @@ fetchBreeds().then((breeds)=>{
     isHidden(loaderEl);
     isVisible(selectEl);
    
-
-   
-    let firstElId='';
-
     for (const {id,name} of breeds) {
         const markup = makeSelectMarkup(id,name);
-        renderMarkup(selectEl,markup) ;
-        firstElId=selectEl.firstChild.value;
+        renderMarkup(selectEl,markup);         
     };
-    
-    renderFetchDataById(firstElId);
+    renderFetchDataById(selectEl.value);
 }).catch(()=>isVisible(errorEl));
 
 function makeSelectMarkup(id,name) {
@@ -40,6 +34,7 @@ function renderMarkup(container, markup) {
 selectEl.addEventListener("change", onSelectValue);
 
 function onSelectValue(event) { 
+    
     clearContainer(catInfoContainerEl);
     const breedId= event.currentTarget.value;
     renderFetchDataById(breedId);
@@ -50,7 +45,6 @@ function renderFetchDataById(id) {
      isHidden(catInfoContainerEl);
      isVisible(loaderEl);
      
-
     fetchBreedById(id).then((breed)=>{
         isHidden(loaderEl);
         isVisible(catInfoContainerEl);
